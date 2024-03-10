@@ -15,3 +15,5 @@ def browser_management():
     # browser.config.click_by_js = True               #клики через джаву
     # browser.config.type_by_js = True                #текст вводится мгновенно через джава скрипт
     browser.config.driver_options = driver_options
+
+# Отчет аллюра  - ' allure serve tests/allure-results  '

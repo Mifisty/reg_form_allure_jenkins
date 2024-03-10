@@ -1,3 +1,4 @@
+import allure
 from selene import browser, be, by, have  # noqa
 
 from reg_form_allure_jenkins import resource
@@ -25,10 +26,12 @@ class RegistrationPageHighLevel:
         self.city2 = browser.all('[id^=react-select][id*=option]')
         self.submit = browser.element('#submit')
 
+    @allure.step('open registration form')
     def open(self):
         browser.open('/automation-practice-form')
         return self
 
+    @allure.step('fill registration user')
     def fill_reg_user(self, user: User):
         self.first_name.type(user.first_name)
         self.last_name.type(user.last_name)
@@ -51,6 +54,7 @@ class RegistrationPageHighLevel:
         self.city2.element_by(have.exact_text(user.city)).click()
         self.submit.click()
 
+    @allure.step('should_registered_user_with')
     def should_registered_user_with(self, user: User):
         browser.element('.modal-header').should(have.text('Thanks for submitting the form'))
         browser.element('.table').all('td').even.should(
