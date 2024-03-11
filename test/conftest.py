@@ -2,6 +2,8 @@ import pytest
 from selene import browser
 from selenium import webdriver
 
+from utils import attach
+
 
 @pytest.fixture(scope='function', autouse=True)
 def browser_management():
@@ -16,4 +18,7 @@ def browser_management():
     # browser.config.type_by_js = True                #текст вводится мгновенно через джава скрипт
     browser.config.driver_options = driver_options
 
-# Отчет аллюра  - ' allure serve tests/allure-results  '
+    attach.add_screenshot(browser)
+    attach.add_logs(browser)
+    attach.add_html(browser)
+# Отчет аллюра  - ' allure serve test/allure-results  '
