@@ -1,5 +1,5 @@
 import allure
-from selene import browser, be, by, have  # noqa
+from selene import browser, be, by, have, command  # noqa
 
 from reg_form_allure_jenkins import resource
 from reg_form_allure_jenkins.data.users import User
@@ -48,6 +48,7 @@ class RegistrationPageHighLevel:
         self.hobbies.element_by(have.exact_text(user.hobbies)).click()
         self.upload.set_value(resource.path('pic.jpg'))
         self.current_address.type(user.address)
+        self.state.perform(command.js.scroll_into_view)
         self.state.click()
         self.state2.element_by(have.exact_text(user.state)).click()
         self.city.click()

@@ -1,5 +1,5 @@
 import allure
-from selene import browser, be, have
+from selene import browser, be, have, command
 
 from reg_form_allure_jenkins import resource
 
@@ -67,6 +67,7 @@ class RegistrationPage:
 
     def fill_state(self, name):
         with allure.step('выбираем штат'):
+            browser.element('#state').perform(command.js.scroll_into_view)
             browser.element('#state').click()
             browser.all('[id^=react-select][id*=option]').element_by(
                 have.exact_text(name)

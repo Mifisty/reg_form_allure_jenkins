@@ -1,7 +1,7 @@
 import os
 
 import allure
-from selene import browser, be, have, by  # noqa
+from selene import browser, be, have, by, command  # noqa
 
 
 def test_registration():
@@ -31,6 +31,7 @@ def test_registration():
 
         # добавить картинку
         browser.element('#uploadPicture').send_keys(os.path.abspath('test/pic.jpg'))
+        browser.element('#currentAddress').perform(command.js.scroll_into_view)
         browser.element('#currentAddress').type('Earth').press_enter()
         browser.element('#state').click()
         browser.element('#react-select-3-option-2').click()
