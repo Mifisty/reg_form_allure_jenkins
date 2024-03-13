@@ -6,8 +6,11 @@ __pycache__/
 # C extensions
 *.so
 
+.env
+
 #allure
 test/allure-results
+allure-results
 
 # Distribution / packaging
 .Python

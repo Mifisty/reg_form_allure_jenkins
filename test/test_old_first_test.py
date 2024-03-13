@@ -30,7 +30,7 @@ def test_registration():
                     'div:nth-child(1) > label').click()
 
         # добавить картинку
-        browser.element('#uploadPicture').send_keys(os.path.abspath('pic.jpg'))
+        browser.element('#uploadPicture').send_keys(os.path.abspath('test/pic.jpg'))
         browser.element('#currentAddress').type('Earth').press_enter()
         browser.element('#state').click()
         browser.element('#react-select-3-option-2').click()
