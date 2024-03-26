@@ -56,3 +56,4 @@ def setup_browser():
     browser.quit()
 
 # Отчет аллюра  - ' allure serve     test/allure-results  '
+# java "-DconfigFile=notifications/config.json" -jar notifications/allure-notifications-4.2.1.jar

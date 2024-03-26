@@ -6,6 +6,10 @@ __pycache__/
 # C extensions
 *.so
 
+#отчет в мессенджер
+notifications
+
+#ключи
 .env
 
 #allure

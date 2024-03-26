@@ -10,4 +10,3 @@ def test_higt_registration():
     high_registration_page.open()
     high_registration_page.fill_reg_user(student)
     high_registration_page.should_registered_user_with(student)
-

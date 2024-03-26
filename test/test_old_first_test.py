@@ -20,14 +20,14 @@ def test_registration():
         browser.element('.react-datepicker__year-select').click().element(by.text('1985')).click()
         browser.element('.react-datepicker__month-select').click().element(by.text('August')).click()
         browser.element(
-                f'.react-datepicker__day--022:not'
-                f'(.react-datepicker__day--outside-month)').click()
+            f'.react-datepicker__day--022:not'
+            f'(.react-datepicker__day--outside-month)').click()
 
         browser.element('#subjectsInput').type('maths').press_enter()
         browser.element('#subjectsInput').type('eng').press_enter()
 
         browser.element('#hobbiesWrapper > div.col-md-9.col-sm-12 > '
-                    'div:nth-child(1) > label').click()
+                        'div:nth-child(1) > label').click()
 
         # добавить картинку
         browser.element('#uploadPicture').send_keys(os.path.abspath('test/pic.jpg'))
@@ -44,8 +44,7 @@ def test_registration():
     with allure.step('should registered user with'):
         browser.element('.modal-header').should(have.text('Thanks for submitting the form'))
 
-    # проверяет по любоу 1 символу всю таблицу
-
+        # проверяет по любоу 1 символу всю таблицу
 
         browser.element('.table > tbody > tr:nth-child(1)').should(have.text('Evgenii Mif'))
         browser.element('.table > tbody > tr:nth-child(2)').should(have.text('email@mail.ru'))
@@ -58,6 +57,6 @@ def test_registration():
         browser.element('.table > tbody > tr:nth-child(9)').should(have.text('Earth'))
         browser.element('.table > tbody > tr:nth-child(10)').should(have.text('Haryana Panipat'))
 
-    # Тест закончен закрыть окно
+        # Тест закончен закрыть окно
 
         browser.element('#closeLargeModal').click()
