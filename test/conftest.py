@@ -37,8 +37,6 @@ def setup_browser():
 
     browser.config.driver = driver
 
-
-# def browser_management():
     browser.config.base_url = 'https://demoqa.com'
     driver_options = webdriver.ChromeOptions()
     driver_options.page_load_strategy = 'eager'
@@ -55,5 +53,7 @@ def setup_browser():
 
     browser.quit()
 
+
 # Отчет аллюра  - ' allure serve     test/allure-results  '
-# java "-DconfigFile=notifications/config.json" -jar notifications/allure-notifications-4.2.1.jar
+# allure generate allure-results
+# java "-DconfigFile=notifications/config.json" -jar notifications/allure-notifications-4.6.1.jar

@@ -15,6 +15,7 @@ notifications
 #allure
 test/allure-results
 allure-results
+allure-report
 
 # Distribution / packaging
 .Python
